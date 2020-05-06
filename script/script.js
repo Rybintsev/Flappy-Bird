@@ -100,7 +100,7 @@ startGame.onclick = function draw() {
 
 		if(pipe[i].x == 10) {
 			score++;
-			// score_audio.play();
+			score_audio.play();
 		}
 	}
 
