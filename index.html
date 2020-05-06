@@ -13,8 +13,21 @@
 	
 
 	<canvas id="canvas" width="288" height="512"></canvas>
-
-	<div class="jump-but" id="Jump"><span>Jump</span></div>
+	<div class="start-screen" id="startScreen">
+		<img src="img/bird.png" alt="">
+		<img src="img/bg.png" alt="">
+		<img src="img/fg.png" alt="">
+		<img src="img/pipeUp.png" alt="">
+		<img src="img/pipeBottom.png" alt="">
+	</div>
+	<button class="button-start" id="button-start">Start</button>
+	<div class="modal-end modal close" id="modalEnd">
+		<h1>You lose!</h1>
+		<br>
+		<h2 id="score"></h2>
+		<button class="button-restart" id="buttonRestart">Restart</button>
+	</div>
+	<div class="jump-but close" id="Jump"><span>Jump</span></div>
 	<script 
 		src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
