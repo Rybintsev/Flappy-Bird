@@ -21,14 +21,17 @@ var score_audio = new Audio();
 fly.src = 'audio/fly.mp3';
 score_audio.src = 'audio/score.mp3';
 
-var gap = 90;
+var gap = 90; //Расстояние между трубами по Y
 
 // При нажатии на какую-либо кнопку
-document.addEventListener('keydown', moveUp);
+// document.addEventListener('keydown', moveUp);
+var jump = document.getElementById("Jump");
+jump.addEventListener("click", moveUp);
 
 function moveUp() {
-	yPos -= 25;
+	yPos -= 27; //Высота прышка птички
 	fly.play();
+	fly.currentTime = 0;
 }
 
 // Создание блоков
@@ -40,10 +43,11 @@ pipe[0] = {
 }
 
 var score = 0;
+
 // Позиция птички
 var xPos = 10;
 var yPos = 200;
-var grav = 1.5;
+var grav = 1.6; //Скорость падения птички
 
 function draw() {
 	ctx.drawImage(bg, 0, 0);
@@ -54,18 +58,33 @@ function draw() {
 
 		pipe[i].x--;
 
-		if(pipe[i].x == 125) {
+		if(pipe[i].x == 100) { //Расстояние между трубами по X
 			pipe.push({
 				x : cvs.width,
 				y : Math.floor(Math.random() * pipeUp.height) - pipeUp.height
 			});
 		}
 
+		if(cvs.width - pipe[i].x == 0) {
+				pipe.shift({
+				x: cvs.width,
+				y: Math.floor(Math.random() * pipeUp.height - pipeUp.height),
+			});
+	}
+
 		if(xPos + bird.width >= pipe[i].x
 			&& xPos <= pipe[i].x + pipeUp.width
 			&& (yPos <= pipe[i].y + pipeUp.height
-				|| yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
+				|| yPos + bird.height >= pipe[i].y + pipeUp.height + gap)) {
 			location.reload();
+
+			pipe[i].x == 0;
+		}
+
+		if(yPos + bird.height >= cvs.height - fg.height) {
+			grav = 0;
+		} else {
+			grav = 1.6; //Высота прышка птички
 		}
 
 		if(pipe[i].x == 5) {
@@ -81,7 +100,7 @@ function draw() {
 
 	ctx.fillStyle = '#000';
 	ctx.font = '25px Verdana';
-	ctx.fillText('Счёт: ' + score, 10, 500);
+	ctx.fillText('Счёт: ' + score, 10, 30);
 	requestAnimationFrame(draw);
 }
 
