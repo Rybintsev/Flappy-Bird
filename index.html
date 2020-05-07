@@ -11,23 +11,43 @@
 </head>
 <body>
 	
+	<div class="game">
+		<canvas id="canvas" width="288" height="512">
+		</canvas>
+		<div class="change__game" id="changeGame">
+			<img src="img/scene01/bird.png" alt="" id="Game01">
+		</div>
+		<div class="start-screen" id="startScreen">
+			<img class="bird" src="img/scene01/bird.gif" alt="">
+			<img src="img/scene01/bg.png" alt="">
+			<img src="img/scene01/fg.png" alt="">
+			<img src="img/scene01/pipeUp.png" alt="">
+			<img src="img/scene01/pipeBottom.png" alt="">
+		</div>
+		<button class="button-start" id="button-start">Start</button>
+		<div class="jump-but close" id="Jump"><span>Jump</span></div>
+		<div class="modal-end modal close" id="modalEnd">
+			<h1>You lose!</h1>
+			<br>
+			<h2 id="score"></h2>
+			<button class="button-restart" id="buttonRestart">Restart</button>
+		</div>
+	</div>
+	<div class="update-but" id="updateButton"></div>
+	<div class="update" id="update">
+		<h2>Обновление: </h2>
+		<ul>
+			<li>Добавлен блок, в котором написан список обновлений, а так же версия обновления!</li>
+			<li>Добавлен прыжок на стрелочку вверх</li>
+			<li>Изменён размер кнопки прыжка</li>
+			<li>Уменьшена высота взлёта птички с 45 до 40</li>
+			<li>Расстояние между трубами увеличено в 2 раза</li>
+			<li>Увеличена скорость падения птички с 2.5 до 3</li>
+			<li>Добавлена анимация для птички</li>
+		</ul>
+		<h4>Версия: Альфа 0.5</h4>
+	</div>
 
-	<canvas id="canvas" width="288" height="512"></canvas>
-	<div class="start-screen" id="startScreen">
-		<img src="img/bird.png" alt="">
-		<img src="img/bg.png" alt="">
-		<img src="img/fg.png" alt="">
-		<img src="img/pipeUp.png" alt="">
-		<img src="img/pipeBottom.png" alt="">
-	</div>
-	<button class="button-start" id="button-start">Start</button>
-	<div class="modal-end modal close" id="modalEnd">
-		<h1>You lose!</h1>
-		<br>
-		<h2 id="score"></h2>
-		<button class="button-restart" id="buttonRestart">Restart</button>
-	</div>
-	<div class="jump-but close" id="Jump"><span>Jump</span></div>
 	<script 
 		src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
