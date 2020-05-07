@@ -3,6 +3,7 @@ var cvs = document.getElementById('canvas');
 var ctx = cvs.getContext('2d');
 
 var bird = new Image();
+var birdFly = new Image();
 var bg = new Image();
 var fg = new Image();
 var pipeUp = new Image();
@@ -15,6 +16,7 @@ document.getElementById('startScreen').addEventListener("click", defaultGame);
 
 function defaultGame() {
 	bird.src = 'img/scene01/bird.gif';
+	birdFly.src = 'img/scene01/bird_fly.png';
 	bg.src = 'img/scene01/bg.png';
 	fg.src = 'img/scene01/fg.png';
 	pipeUp.src = 'img/scene01/pipeUp.png';
@@ -54,7 +56,7 @@ var pipe = [];
 
 pipe[0] = {
 	x : cvs.width,
-	y : 0
+	y : -100
 }
 
 var score = 0;

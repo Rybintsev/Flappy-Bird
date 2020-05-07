@@ -72,6 +72,10 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden; }
 
 body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-color: #141414;
   font-family: 'Open Sans', sans-serif; }
 
@@ -157,12 +161,12 @@ canvas {
     height: 118px; }
   .start-screen img:nth-child(4) {
     position: absolute;
-    top: 0;
+    top: -100px;
     right: -50px;
     z-index: 2; }
   .start-screen img:nth-child(5) {
     position: absolute;
-    bottom: -207px;
+    bottom: -107px;
     right: -50px;
     z-index: 2; }
 
